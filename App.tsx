@@ -8,11 +8,13 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  Image,
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
+  TextInput,
   useColorScheme,
   View,
 } from 'react-native';
@@ -72,13 +74,31 @@ function App(): React.JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
+            <Image
+          source={{
+            uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
+          }}
+          style={{width: 200, height: 200}}
+        />
+        <TextInput
+        style={{
+          height: 40,
+          borderColor: 'gray',
+          borderWidth: 1,
+          color: !isDarkMode ? Colors.black : Colors.white,
+        }}
+        defaultValue="You can type in me"
+      />
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
+            Don't play with meeeeee.
+
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
