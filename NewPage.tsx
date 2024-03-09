@@ -1,8 +1,10 @@
 import React, { PropsWithChildren } from 'react';
 import { View, Text, StyleSheet, useColorScheme, Image, SafeAreaView, ScrollView, StatusBar, TextInput } from 'react-native';
-import { Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions } from 'react-native/Libraries/NewAppScreen';
+import { Colors, Header } from 'react-native/Libraries/NewAppScreen';
+import MyScanner from './QRScanner';
 
 function NewPage() {
+    console.log("hiiii");
     const isDarkMode = useColorScheme() === 'dark';
 
     const backgroundStyle = {
@@ -17,43 +19,19 @@ function NewPage() {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
+
         
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-            <Image
-          source={{
-            uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
-          }}
-          style={{width: 200, height: 200}}
-        />
-        <TextInput
-        style={{
-          height: 40,
-          borderColor: 'gray',
-          borderWidth: 1,
-          color: !isDarkMode ? Colors.black : Colors.white,
-        }}
-        defaultValue="You can type in me"
-      />
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
             Don't play with meeeeee.
 
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+          <MyScanner />
         </View>
       </ScrollView>
     </SafeAreaView>
